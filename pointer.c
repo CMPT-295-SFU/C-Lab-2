@@ -1,7 +1,7 @@
 /*
   Lab 2(Data Lab  - Pointers)
  *
- * <PLEASE REPLACE THIS LINE WITH YOUR NAME AND STUDENT USERNAME>
+ * Caesar Lau 200098368
  *
  * pointer.c - Source file with your solutions to the Lab.
  *             This is the file you will hand in to your instructor.
@@ -110,9 +110,11 @@ int intSize() {
   int intArray[10];
   int *intPtr1;
   int *intPtr2;
+  
   // Write code to compute size of an integer.
-
-  return 2;
+  intPtr1 = intArray; // Point to the beginning of intArray or the address of intArray[0] (address of first element)
+  intPtr2 = intPtr1+1; // Ptr2 point to the next integer address
+  return (int)intPtr2-(int)intPtr1; // Evaluate distance difference between two pointers
 }
 
 /*
@@ -134,8 +136,9 @@ int doubleSize() {
   double *doubPtr1;
   double *doubPtr2;
   // Write code to compute size of a double.
-
-  return 2;
+  doubPtr1 = doubArray; // Pointer to the first element of doubArray;
+  doubPtr2 = doubPtr1++; // Point to the next element doubtPtr1 points to;
+  return (int)doubPtr1 - (int)doubPtr2; // Evaluate bytes difference between two doubPtr1 and doubPtr2
 }
 
 /*
@@ -157,8 +160,10 @@ int pointerSize() {
   double **ptrPtr1;
   double **ptrPtr2;
   // Write code to compute size of a pointer.
-
-  return 2;
+  ptrPtr1 = ptrArray;
+  ptrPtr2 = ptrPtr1++;
+  return (int)ptrPtr1 - (int)ptrPtr2;
+  
 }
 
 /*
